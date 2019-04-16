@@ -1,0 +1,25 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "Notes app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amyj0rdan/notes_app_js.git"
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "amy and cosmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amyj0rdan/notes_app_js/issues"
+  },
+  "homepage": "https://github.com/amyj0rdan/notes_app_js#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
