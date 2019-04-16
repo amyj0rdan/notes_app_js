@@ -5,3 +5,12 @@ function instantiateNoteControllerTest() {
 }
 
 instantiateNoteControllerTest();
+
+function noteControllerTakesANotelist() {
+  var noteList = () => {};
+  var noteController = new NoteController(noteList);
+
+  assert.isTrue(noteController.noteList === noteList);
+}
+
+noteControllerTakesANotelist();
