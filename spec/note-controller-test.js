@@ -14,3 +14,24 @@ function noteControllerTakesANotelist() {
 }
 
 noteControllerTakesANotelist();
+
+function testControllerAddNote() {
+  function NoteListDouble() {
+    this.addNoteCount = 0;
+  }
+
+  NoteListDouble.prototype = {
+    addNote: function() {
+      this.addNoteCount += 1;
+    }
+  };
+
+  var noteListDouble = new NoteListDouble();
+  var noteController = new NoteController(noteListDouble);
+
+  noteController.addNote("something");
+
+  assert.isTrue(NoteListDouble.addNoteCount !== 1);
+}
+
+testControllerAddNote();
