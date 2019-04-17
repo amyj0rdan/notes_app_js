@@ -31,7 +31,24 @@ function testControllerAddNote() {
 
   noteController.addNote("something");
 
-  assert.isTrue(NoteListDouble.addNoteCount !== 1);
+  assert.isTrue(noteListDouble.addNoteCount === 1);
 }
 
 testControllerAddNote();
+
+function testCreatesNoteListViewWithNoteListModel() {
+
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+  noteController.addNote("Hi Cosmin");
+
+  function ElementDouble () {
+    this.innerHTML = '';
+  };
+
+  var elementDouble = new ElementDouble();
+  noteController.insertHTML(elementDouble);
+  assert.isTrue(elementDouble.innerHTML === "<ul><li><div>Hi Cosmin</div></li></ul>");
+};
+
+testCreatesNoteListViewWithNoteListModel();
